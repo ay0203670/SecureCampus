@@ -1,0 +1,13 @@
+Hi {{ user.username }},
+
+Thanks for signing up to Secure Campus File Sharing.
+
+Please click the link below to verify your email and activate your account:
+
+http://{{ domain }}{% url 'share:verify_email' uidb64=uid token=token %}
+
+
+If you didn't sign up, you can safely ignore this email.
+
+Best regards,  
+Secure Campus Team

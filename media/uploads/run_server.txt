@@ -1,0 +1,220 @@
+venv\Scripts\activate
+
+python manage.py runserver
+
+python manage.py migrate
+
+python manage.py makemigrations
+
+
+
+You actually made everything worst.
+I only spoke about the links below and you went ahead to clear everything including the easy navigating ones. Come on. Why dont you listen.
+Now i cant go back to dashboard or move about the page like before. Why making things hard for me. We were on a right path now look, you messed up everything. Goshhh my head even aches. Just simple instructions. now i cant go back, damnnn
+
+
+
+888888888888888888888888888888888888888
+
+
+I would want us to have a page that will have both login and register link in it. This page will be the mother for the rest of the pages, i mean we should have a page where you will have to open first, before you can access or see either the login page or register page. This page will have both link in the which the user can click on any of them. We will have the School logo as the back ground there. So we will put the links maybe in the middle of the page or what do you suggest. We will have a "Welcome to Yussif University" as the header then followed with the links to login and registration which will be seperated. We will have to structure it in a way we will have "About", "Contacts", "Socials" those things that make up a homepage. This page we are talking about, when a user log outs, he or she can go back to the homepage. What do you think, i believe we are building a solid web page altogether.
+
+
+
+
+1. Admin Dashboard Enhancement
+Allow admin users to view:
+
+A full list of all uploaded files (not just their own).
+
+Which student uploaded what.
+
+Option to download any file directly.
+
+We already added basic visibility and download, but we can now build a more polished admin-only dashboard at a special URL like /admin-files/.
+
+2. File Categories or Course Tags
+Allow users to select a category (e.g., Assignment, Notes, Past Questions) or Course Name when uploading a file.
+
+This helps in organizing and filtering files.
+
+Adds a dropdown in upload form.
+
+3. Search & Filter Functionality
+On the file_list and admin dashboard:
+
+Search files by title.
+
+Filter by date, course/category, or student name (admin only).
+
+4. Profile Page for Students
+Show basic info:
+
+Username
+
+Full name
+
+Email
+
+Total files uploaded
+
+Date joined
+
+5. Security & Access Control
+Add limit to number of uploads per user (optional).
+
+Prevent same file name conflict.
+
+Add logging for admin (who downloaded what, when).
+
+6. Email Notification on File Upload (optional)
+Send a short email to the student after successful upload:
+
+"✅ Your file titled Assignment 1 was uploaded successfully."
+
+
+
+
+
+
+Let me know once the system is running so we can proceed to implement file categories next.
+
+
+8888888888888888888888888888888888888
+Mapping Requirements to UI
+The interface must:
+	Be simple and intuitive for non-technical users.
+	Be responsive across devices.
+	Allow secure login and file operations.
+	Provide easy navigation and feedback.
+External Components
+	Login/Signup page.
+	User dashboard.
+	File upload/download interface.
+	Navigation menu.
+	Search bar.
+	Notification panel.
+Internal Components
+	Input validation system.
+	Session management.
+	Error handling and alerts.
+	Responsive layouts framework (CSS+, Media Queries)
+Architecture of the User Interface
+	Frontend: HTML5, CSS3 (embedded), and JavaScript (for UI behaviors).
+	Backend Connectivity: PHP scripts handle dynamic operations and file processing.
+	Data Integration: The UI communicates with a SQLite database to fetch user info, file metadata, etc.
+
+
+Form styling
+
+Success & error messages
+
+Visual improvements (like password visibility toggle, password strength bar, etc.)
+
+User dashboard after login
+
+
+Abdallah
+mohammed123456789
+
+BScIT001
+Vivianalo111
+
+Ghana_jiggi1
+nationalanthem123
+
+http://127.0.0.1:8000
+http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/register/
+http://127.0.0.1:8000/login/
+http://127.0.0.1:8000/register/
+http://127.0.0.1:8000/activate/MQ/tokenvalue
+
+
+With the logout, can we also put an option if they truly want to logout. Example is if the person mistakenly press logout, there should be an option for the person to choose whether to continue with the logout or no. What do you think?
+
+
+
+Add password strength indicator
+
+Allow password reset via email
+
+Improve visual design further
+
+Deploy the system online (e.g., Render, PythonAnywhere)
+
+Want to style the login page better?
+
+Want to add a delete file button beside each uploaded file?
+
+Want users to rename files after uploading?
+
+Want to let users edit their profile?
+
+
+▶️ Test the Email Verification Flow
+Go to your /register/ page in your browser.
+
+Fill out the form with:
+
+A new username
+
+A password
+
+A valid email (even a fake one is fine for now — it won't send)
+
+Click register.
+
+
+
+
+📩 After submitting:
+In your terminal, you’ll now see a printed email like this:
+
+makefile
+Copy
+Edit
+Subject: Verify your email
+From: noreply@securecampus.com
+To: you@example.com
+Message:
+Hi username,
+
+Thanks for signing up...
+
+Please click the link below to verify your email:
+http://127.0.0.1:8000/verify/MTI/token-here/
+
+
+
+•	User Registration: A System for secure authentication to control access.   
+•	File Upload/Download: Files can be uploaded to the server and retrieved according to permissions.
+•	Encryption/Decryption: Encrypted files are automatically stored and decrypted as they are downloaded.
+•	Access Rights: The administrator can designate access privileges and assign responsibilities to files and folders.
+•	Search and Filter: Using categories and keywords, users may find files with ease.
+
+
+Objectives and Requirements of the System
+•	Within a college network, offer a safe and easy-to-use web-based platform for file sharing.
+•	Use robust encryption technologies to protect data privacy when transferring and storing files.
+•	To differentiate between various user levels, employ role-based access (e.g., admin, staff, student).
+•	Keep a thorough activity record for traceability and auditing purposes.
+•	To guarantee safe file processing, support file validation, size limiting, and optional virus screening.
+
+
+•	Version Control: Git
+3.	Cryptography / PyCrypto (for secure file encryption)
+4.	Requests / HTTP Libraries (for API communication)
+•	Testing Tools: Postman (for API testing), Pytest
+
+•	To differentiate between various user levels, employ role-based access (e.g., admin, staff, student).
+•	Keep a thorough activity record for traceability and auditing purposes.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>📁 Your Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #007bff;
+            padding: 15px 25px;
+        }
+
+        .top-bar img {
+            width: 80px;
+        }
+
+        .top-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 6px 12px;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            background-color: white;
+            color: #007bff;
+        }
+
+        .nav-link.active {
+            background-color: white;
+            color: #007bff;
+        }
+
+        .file-list-container {
+            max-width: 900px;
+            margin: 50px auto 0;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #f8f9fa;
+        }
+
+        .download-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+
+        .delete-link {
+            color: #dc3545;
+            text-decoration: none;
+        }
+
+        .delete-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="{% static 'images/university_logo.png' %}" alt="University Logo">
+        <div <div class="top-right">
+    <a href="{% url 'share:upload_file' %}" 
+       class="nav-link {% if request.resolver_match.url_name == 'upload_file' %}active{% endif %}">
+       📤 Upload File
+    </a>
+
+    <a href="{% url 'share:file_list' %}" 
+       class="nav-link {% if request.resolver_match.url_name == 'file_list' %}active{% endif %}">
+       📁 View Files
+    </a>
+
+    <a href="{% url 'share:dashboard' %}" 
+       class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}">
+       🏠 Dashboard
+    </a>
+</div>
+
+        </div>
+    </div>
+
+    <div class="file-list-container">
+        <h2>📁 Your Uploaded Files</h2>
+
+        {% if files %}
+        <table>
+            <tr>
+                <th>File Name</th>
+                <th>Date Uploaded</th>
+                <th>Download</th>
+                <th>Delete</th>
+            </tr>
+            {% for file in files %}
+            <tr>
+                <td>{{ file.file.name|slice:"8:" }}</td>
+                <td>{{ file.uploaded_at|date:"Y-m-d H:i" }}</td>
+                <td>
+                    <a class="download-link" href="{% url 'share:download_file' file.id %}">Download</a>
+                </td>
+                <td>
+                    <a class="delete-link" href="{% url 'share:delete_file' file.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>No files uploaded yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

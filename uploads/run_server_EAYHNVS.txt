@@ -1,0 +1,21 @@
+venv\Scripts\activate
+python manage.py runserver
+
+http://127.0.0.1:8000/files/
+http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/register/
+http://127.0.0.1:8000/login/
+
+
+with the registeration section, i would love us to add email address in the section as well, with date of birth to, and also a school id section
+
+with the login, we should replace the username with id-number and add a password section to it
+
+let us get a login section where after loggining in, you can also upload and download after loginning into the page, it should be user friendly as well.
+
+
+how do i clear the uploaded files saved so far to make it look fresh, for presentation reasons which is in the uploaded file section
+
+let us add a portal to the project where the student can view his or uploaded file, have access to 
+
+i want you to link all the files we have created so far. i mean when one registers, or logins in, the user is sent to another page, the user can click on a section and will be taken to another web page, i want you to make this very professional and make it look like a real website. There should be a homepage, where both registeration and login section is clearly seen, it should have date
